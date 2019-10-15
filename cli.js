@@ -1,4 +1,6 @@
-const ace = require('@adonisjs/ace');
+const ace = require(`@adonisjs/ace`)
 
-ace.wireUpWithCommander();
-ace.invoke();
+ace.addCommand(require(`./arguments/hello-world.js`))
+
+ace.wireUpWithCommander()
+ace.invoke()
