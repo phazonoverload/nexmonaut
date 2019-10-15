@@ -1,6 +1,6 @@
 const { Command } = require('@adonisjs/ace')
 
-class HelloWorld extends Command {
+class Hello extends Command {
   static get signature() {
     return `hello`
   }
@@ -14,4 +14,4 @@ class HelloWorld extends Command {
   }
 }
 
-module.exports = HelloWorld
+module.exports = Hello
