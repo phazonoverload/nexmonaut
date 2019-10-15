@@ -1,11 +1,12 @@
 {
-  "name": "nexmo",
+  "name": "nexmonaut",
   "version": "1.0.0",
   "description": "",
   "main": "cli.js",
   "license": "ISC",
   "dependencies": {
     "@adonisjs/ace": "^5.0.8",
-    "axios": "^0.19.0"
+    "axios": "^0.19.0",
+    "nexmo": "^2.5.1"
   }
 }
