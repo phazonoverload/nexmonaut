@@ -5,6 +5,7 @@
   "main": "cli.js",
   "license": "ISC",
   "dependencies": {
-    "@adonisjs/ace": "^5.0.8"
+    "@adonisjs/ace": "^5.0.8",
+    "axios": "^0.19.0"
   }
 }

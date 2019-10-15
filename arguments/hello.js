@@ -6,7 +6,7 @@ class Hello extends Command {
   }
 
   static get description() {
-    return `Response with hello`
+    return `Responds with hello - half of a good hello world`
   }
 
   async handle(args, flags) {
