@@ -22,7 +22,7 @@ class Sms extends Command {
     if(!NEXMO_API_SECRET) API_SECRET = await this.ask(`What's your Nexmo API Secret?`)
     else apiSecret = NEXMO_API_SECRET
 
-    const applicationId = await this.ask(`What's your application ID?`, `88193f21-cee2-4d96-97c1-3a4fc761fd6e`)
+    const applicationId = await this.ask(`What's your application ID?`)
     const privateKeyLocation = await this.ask(`Where's the location of your private.key file within this directory?`, `/`)
     const privateKey = fs.readFileSync(`${process.cwd()}${privateKeyLocation}private.key`)
 
