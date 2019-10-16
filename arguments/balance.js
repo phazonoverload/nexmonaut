@@ -30,8 +30,11 @@ class Balance extends Command {
     const nexmo = new Nexmo({apiKey, apiSecret})
 
     await nexmo.account.checkBalance((err, result) => {
-      if(err) console.log(err);
-      console.log(`Your Nexmo balance is €${result.value.toFixed(2)}`);
+      if(err) {
+        this.error(err)
+        return
+      }
+      console.log(`Your Nexmo balance is €${result.value.toFixed(2)}`)
     });    
   }
 }
