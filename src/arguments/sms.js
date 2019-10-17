@@ -23,8 +23,8 @@ class Sms extends Command {
     else apiSecret = NEXMO_API_SECRET
 
     const applicationId = await this.ask(`What's your application ID?`)
-    const privateKeyLocation = await this.ask(`Where's the location of your private.key file within this directory?`, `/`)
-    const privateKey = fs.readFileSync(`${process.cwd()}${privateKeyLocation}private.key`)
+    const privateKeyLocation = await this.ask(`Where's the location of your private.key file?`, `/`)
+    const privateKey = fs.readFileSync(`${process.cwd()}${privateKeyLocation}/private.key`)
 
     // Final check - did user enter required data. If not, provide error and break
     if(!apiKey || !apiSecret || !applicationId || !privateKey) {
