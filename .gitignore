@@ -1,3 +1,4 @@
 node_modules
 private.key
 .DS_Store
+test.js
