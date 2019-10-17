@@ -1,10 +1,9 @@
 {
-  "name": "@phazonoverload/nexmonaut",
+  "name": "nexmonaut",
   "version": "1.0.0",
   "description": "A simple CLI to use Nexmo",
   "main": "src/cli.js",
   "bin": {
-    "@phazonoverload/nexmonaut": "bin/nexmonaut",
     "nexmonaut": "bin/nexmonaut"
   },
   "publishConfig": {
@@ -15,15 +14,6 @@
     "@adonisjs/ace": "^5.0.8",
     "axios": "^0.19.0",
     "esm": "^3.2.25",
-    "mz": "^2.7.0",
     "nexmo": "^2.5.4-beta-1",
-    "ora": "^4.0.2"
-  },
-  "keywords": [
-    "cli",
-    "nexmo",
-    "sms",
-    "messages",
-    "messaging"
-  ]
+  }
 }
