@@ -52,3 +52,7 @@ This command will take the message you pass as an argument and the requested to/
 Message should be in quotes
 
 Don't prepend phone numbers with a + or 00 - for a UK number the format should be something like `447496012345`
+
+# Notes
+
+- Not sure how this will play on Windows
