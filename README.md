@@ -33,6 +33,10 @@ Glitch puts apps to sleep after a period of inactivity, so before you use it to 
 
 # Usage
 
+## `nexmonaut`
+
+Lists available commands
+
 ## `nexmonaut setup`
 
 This command will create and save your config. You'll need your API Key, API Secret, an Application ID and the directory where your `private.key` file is located (if it is in `~/Documents/private.key` you should enter `~/Documents`, for example)
@@ -43,6 +47,6 @@ This command will return your available Nexmo balance for the account configured
 
 ## `nexmonaut sms <message>`
 
-This command will take the message you pass as an argument and the requested to/from numbers and send a message using Nexmo.
+This command will take the message you pass as an argument and the requested to/from numbers and send a message using Nexmo
 
 Don't prepend phone numbers with a + or 00 - for a UK number the format should be something like `447496012345`
