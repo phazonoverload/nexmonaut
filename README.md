@@ -39,7 +39,7 @@ Lists available commands
 
 ## `nexmonaut setup`
 
-This command will create and save your config. You'll need your API Key, API Secret, an Application ID and the directory where your `private.key` file is located (if it is in `~/Documents/private.key` you should enter `~/Documents`, for example)
+This command will create and save your config. You'll need your API Key, API Secret, an Application ID and the the location of your `private.key` file.
 
 ## `nexmonaut balance`
 

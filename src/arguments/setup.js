@@ -25,8 +25,8 @@ class Sms extends Command {
     const apiKey = await this.ask(`What's your Nexmo API Key?`)
     const apiSecret = await this.ask(`What's your Nexmo API Secret?`)
     const applicationId = await this.ask(`What's your Nexmo Application ID?`)
-    const keyLocation = await this.ask(`Where's your private.key file?`, `~`)
-    const privateKey = keyLocation.replace(`~`, `/users/${username}`) + '/private.key'
+    const keyLocation = await this.ask(`Where's your private.key file?`, `~/private.key`)
+    const privateKey = keyLocation.replace(`~`, `/users/${username}`)
 
     if(!apiKey || !apiSecret || !applicationId || !privateKey) {
       this.error(`Can't create as information is missing`)
