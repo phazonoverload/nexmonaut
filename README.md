@@ -43,8 +43,6 @@ This command will return your available Nexmo balance for the account configured
 
 ## `nexmonaut sms <message>`
 
-![GIF showing an SMS being sent through nexmonaut](/docs/sms.gif)
-
 This command will take the message you pass as an argument and the requested to/from numbers and send a message using Nexmo.
 
 Don't prepend phone numbers with a + or 00 - for a UK number the format should be something like `447496012345`
