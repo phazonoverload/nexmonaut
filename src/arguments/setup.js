@@ -36,7 +36,7 @@ class Sms extends Command {
     const config = { apiKey, apiSecret, applicationId, privateKey };
 
     this.runCommand(`touch ~/.nexmo`)
-    this.runCommand(`echo "${JSON.stringify(config)}" > ~/.nexmo`)
+    this.runCommand(`echo '${JSON.stringify(config)}' > ~/.nexmo`)
     this.success(`Completed setup. You're good to go!`);
   }
 
