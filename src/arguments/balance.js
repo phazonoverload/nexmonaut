@@ -1,5 +1,7 @@
 const { Command } = require('@adonisjs/ace')
 const Nexmo = require('nexmo')
+const fs = require('fs')
+const username = require('os').userInfo().username
 
 class Balance extends Command {
   static get signature() {
@@ -11,31 +13,29 @@ class Balance extends Command {
   }
 
   async handle(args, flags) {
-    // Grab environment variables if they exist
-    const { NEXMO_API_KEY, NEXMO_API_SECRET } = process.env
-    let apiKey, apiSecret;
+    const configFile = `/users/${username}/.nexmo`
 
-    // If either the key or secret doesn't exist, prompt the user for them
-    if(!NEXMO_API_KEY) API_KEY = await this.ask(`What's your Nexmo API Key?`)
-    else apiKey = NEXMO_API_KEY
-    if(!NEXMO_API_SECRET) API_SECRET = await this.ask(`What's your Nexmo API Secret?`)
-    else apiSecret = NEXMO_API_SECRET
+    if(fs.existsSync(configFile)) {
+      fs.readFile(configFile, `utf8`, async (err, data) => {
+        if (err) {
+          this.error(`Error reading config. Please run nexmonaut setup.`)
+          return
+        }
+        const { apiKey, apiSecret } = JSON.parse(data)
+        
+        const nexmo = new Nexmo({apiKey, apiSecret})
 
-    // Final check - did user enter required data. If not, provide error and break
-    if(!apiKey || !apiSecret) {
-      this.error(`Can't make request as either API Key or API Secret is missing`)
-      return;
-    }
-    
-    const nexmo = new Nexmo({apiKey, apiSecret})
-
-    await nexmo.account.checkBalance((err, result) => {
-      if(err) {
-        this.error(err)
-        return
-      }
-      console.log(`Your Nexmo balance is €${result.value.toFixed(2)}`)
-    });    
+        await nexmo.account.checkBalance((err, result) => {
+          if(err) {
+            this.error(err)
+            return
+          }
+          console.log(`Your Nexmo balance is €${result.value.toFixed(2)}`)
+        });  
+      })
+    } else {
+      this.error('Please run nexmonaut setup first')
+    }  
   }
 }
 
